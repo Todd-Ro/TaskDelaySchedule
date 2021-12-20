@@ -16,7 +16,12 @@ namespace TaskDelaySchedule
             Task.Delay(3000).Wait();
             Console.WriteLine("Put eggs on plate");
 
-            return new Egg();
+            //return new Egg();
+        }
+
+        internal static async Task<Egg> FryEggsAsync(int howMany)
+        {
+            return FryEggs(howMany);
         }
     }
 }

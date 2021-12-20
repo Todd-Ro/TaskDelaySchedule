@@ -20,6 +20,11 @@ namespace TaskDelaySchedule
             return new Toast();
         }
 
+        internal static async Task<Toast> ToastBreadAsync(int slices)
+        {
+            return ToastBread(slices);
+        }
+
 
     }
 }

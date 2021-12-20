@@ -22,5 +22,10 @@ namespace TaskDelaySchedule
 
             return new Bacon();
         }
+
+        internal static async Task<Bacon> FryBaconAsync(int slices)
+        {
+            return FryBacon(slices);
+        }
     }
 }
