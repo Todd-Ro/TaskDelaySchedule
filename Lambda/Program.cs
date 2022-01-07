@@ -77,6 +77,34 @@ namespace Lambda
             {
                 Console.WriteLine(stu.rollNo.ToString() + " " + stu.name);
             }
+            Console.WriteLine();
+            Console.WriteLine();
+
+
+            Dictionary<string, string> EventDict = new Dictionary<string, string>();
+            EventDict.Add("Virtual Coding Conference",
+                "Helps prepare for coding in the new year");
+            EventDict.Add("Women in Coding", "Discussion of History");
+            EventDict.Add("GlobalHack Intro to Coding Workshop", "Learning resource for young people");
+            var sorted = EventDict.OrderBy(x => x.Key);
+            Console.WriteLine("Dictionary OrderBy(x=>y) returns type: " + sorted.GetType());
+            Console.WriteLine();
+
+            IEnumerable<KeyValuePair<string, string>> sorted2 = EventDict.OrderBy(x => x.Key);
+            List<string> valuesSortedByKey = new List<string>();
+            foreach(KeyValuePair<string, string> kvp in sorted2)
+            {
+                valuesSortedByKey.Add(kvp.Value);
+            } 
+            /*Order should be "Learning resource", "Helps prepare", and "Discussion" 
+               *due to underlying order "GlobalHack", "Virtual", "Women"
+               */
+            foreach(string s in valuesSortedByKey)
+            {
+                Console.WriteLine(s);
+            }
+
+
         }
     }
 }
